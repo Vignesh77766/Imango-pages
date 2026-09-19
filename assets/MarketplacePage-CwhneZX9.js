@@ -1,4 +1,4 @@
-import{i as e,n as t,t as n}from"./jsx-runtime-Dk72oS4N.js";import{G as r,O as i,S as a,g as o,n as s,r as c,t as l}from"./index-DflLLTeF.js";var u=e(t(),1),d=[{id:`stripe`,name:`Stripe`,provider:`Stripe, Inc.`,category:`Payments`,description:`Accept payments, manage subscriptions, and handle payouts with a fully documented REST API.`,pricing:`Pay per transaction`,docsUrl:`https://stripe.com/docs/api`,examples:{javascript:`import Stripe from "stripe";
+import{i as e,n as t,t as n}from"./jsx-runtime-Dk72oS4N.js";import{K as r,O as i,S as a,g as o,n as s,r as c,t as l}from"./index-Cs5Bvt4x.js";var u=e(t(),1),d=[{id:`stripe`,name:`Stripe`,provider:`Stripe, Inc.`,category:`Payments`,description:`Accept payments, manage subscriptions, and handle payouts with a fully documented REST API.`,pricing:`Pay per transaction`,docsUrl:`https://stripe.com/docs/api`,examples:{javascript:`import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const intent = await stripe.paymentIntents.create({
