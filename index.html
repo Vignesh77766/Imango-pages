@@ -26,6 +26,34 @@
     <meta name="theme-color" content="#050505" />
 
     <script type="text/javascript">
+      // GitHub Pages caches index.html (~10 min) but asset filenames are
+      // content-hashed, so just after a deploy a returning visitor can get
+      // stale HTML pointing at bundles that no longer exist — every script
+      // 404s and the page renders blank. Detect that nothing mounted and
+      // reload once (reload revalidates the document), then give up so a
+      // genuine app error can't cause a refresh loop.
+      (function () {
+        var KEY = "imango-stale-asset-reload";
+        window.addEventListener("load", function () {
+          window.setTimeout(function () {
+            var root = document.getElementById("root");
+            if (root && root.childElementCount > 0) {
+              try { sessionStorage.removeItem(KEY); } catch (e) {}
+              return;
+            }
+            try {
+              if (sessionStorage.getItem(KEY)) return;
+              sessionStorage.setItem(KEY, "1");
+            } catch (e) {
+              return;
+            }
+            window.location.reload();
+          }, 3000);
+        });
+      })();
+    </script>
+
+    <script type="text/javascript">
       // Decode the redirect from 404.html (see public/404.html) back into a
       // real path before React Router mounts.
       (function (l) {
@@ -60,7 +88,7 @@
         } catch (e) {}
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-DA5o6xOl.js"></script>
+    <script type="module" crossorigin src="/assets/index-XnxKrkQh.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CkzGR_PK.css">
   </head>
   <body>
