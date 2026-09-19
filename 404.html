@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Imango</title>
+    <script type="text/javascript">
+      // GitHub Pages has no server-side routing, so a direct load or refresh of
+      // a client route (e.g. /marketplace) hits this 404 page. Encode the path
+      // into a query string and redirect to index.html, which decodes it back
+      // via history.replaceState before React Router ever sees it.
+      var l = window.location;
+      l.replace(
+        l.protocol + "//" + l.host + "/?/" +
+        l.pathname.slice(1).replace(/&/g, "~and~") +
+        (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
