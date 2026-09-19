@@ -61,6 +61,11 @@
           var decoded = l.search
             .slice(1)
             .split("&")
+            .filter(function (s) {
+              // Drop the cache-busting token 404.html adds so it never
+              // shows up in the address bar.
+              return s.indexOf("__cb=") !== 0;
+            })
             .map(function (s) {
               return s.replace(/~and~/g, "&");
             })

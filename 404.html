@@ -8,11 +8,17 @@
       // a client route (e.g. /marketplace) hits this 404 page. Encode the path
       // into a query string and redirect to index.html, which decodes it back
       // via history.replaceState before React Router ever sees it.
+      // The redirect target is a normal URL that GitHub Pages caches for ten
+      // minutes, and a hard refresh of this page does not bust it — the
+      // navigation below is a separate request. Without a unique token the
+      // browser can keep serving HTML that points at deleted bundles. The
+      // decode script in index.html strips __cb before restoring the path.
       var l = window.location;
       l.replace(
         l.protocol + "//" + l.host + "/?/" +
         l.pathname.slice(1).replace(/&/g, "~and~") +
         (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+        "&__cb=" + Date.now() +
         l.hash
       );
     </script>
