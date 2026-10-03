@@ -1,0 +1,141 @@
+{
+  "id": "/life/",
+  "name": "AML GPT — Ask My Life",
+  "short_name": "AML GPT",
+  "description": "AML GPT is an AI journal that answers from your own notes. Write daily notes in plain words, then ask questions about your own life: who you met, what you never finished, when you first had an idea. Finds people, projects and tasks automatically, shows what you wrote on this day, and saves everything as a .md file.",
+  "start_url": "/life/",
+  "scope": "/life",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "productivity",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "/aml-gpt-app-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/aml-gpt-app-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/aml-gpt-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screens/aml-gpt-2-ask-money.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Ask about your own notes: what you spent, and on what"
+    },
+    {
+      "src": "/screens/aml-gpt-4-spending.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Spending by month and category, with your budgets"
+    },
+    {
+      "src": "/screens/aml-gpt-5-unfinished.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Tasks you mentioned, with their due dates"
+    },
+    {
+      "src": "/screens/aml-gpt-7-bill-photo.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "A bill from a photo becomes a payment"
+    },
+    {
+      "src": "/screens/aml-gpt-wide.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "AML GPT on a computer"
+    }
+  ],
+  "share_target": {
+    "action": "/life/share-target",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            "image/*",
+            "text/*",
+            "application/pdf",
+            "application/epub+zip",
+            "application/zip",
+            "application/x-zip-compressed",
+            "application/json",
+            "application/msword",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "application/vnd.oasis.opendocument.text",
+            "application/rtf",
+            ".pdf",
+            ".epub",
+            ".doc",
+            ".docx",
+            ".pptx",
+            ".xlsx",
+            ".odt",
+            ".rtf",
+            ".md",
+            ".txt",
+            ".csv"
+          ]
+        }
+      ]
+    }
+  },
+  "shortcuts": [
+    {
+      "name": "Write a note",
+      "short_name": "Write",
+      "url": "/life/?new=write",
+      "icons": [
+        {
+          "src": "/aml-gpt-write-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Ask about your notes",
+      "short_name": "Ask",
+      "url": "/life/?new=ask",
+      "icons": [
+        {
+          "src": "/aml-gpt-ask-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
