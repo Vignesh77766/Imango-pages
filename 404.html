@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Imango</title>
+    <script type="text/javascript">
+      var l = window.location;
+      l.replace(
+        l.protocol + "//" + l.host + "/?/" +
+        l.pathname.slice(1).replace(/&/g, "~and~") +
+        (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+        "&__cb=" + Date.now() +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

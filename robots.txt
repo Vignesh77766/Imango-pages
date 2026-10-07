@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://imango.in/sitemap.xml
